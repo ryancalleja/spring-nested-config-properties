@@ -15,3 +15,7 @@ What do I mean by this ?
 For property "example.email.from" we simply defined "private String from;".
 For properties under "example.email.registration", an inner class **RegistrationProperties** was created with all fields inside i.e: "example.email.registration.subject" = "RegistrationProperties.subject", so on and so fort for the rest of the properties. 
 
+##Authors
+ - Ryan Calleja - callejaryan@gmail.com
+
+
