@@ -1,5 +1,5 @@
 #spring-nested-config-properties
-Using spring-boot's new @NestedConfiguration annotation to try out loading properties. Having a well structured properties file will allow you to benefit from this annotation. 
+Using spring-boot's new @ConfigurationProperties annotation to try out loading properties. Having a well structured properties file will allow you to benefit from this annotation.
 
 
 ##Running the application 
@@ -19,6 +19,8 @@ What do I mean by this ?
 
 For property "example.email.from" we simply defined "private String from;".
 For properties under "example.email.registration", an inner class **RegistrationProperties** was created with all fields inside i.e: "example.email.registration.subject" = "RegistrationProperties.subject", so on and so fort for the rest of the properties.
+Now since both Registration and Verification classes have the same properties, it was more convenient to create **AbstractEmailProperties** holding the common properties, and then made the inner classes extend it.
+
 
 
 ###YAML file

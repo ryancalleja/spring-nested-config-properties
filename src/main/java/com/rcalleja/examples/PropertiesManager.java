@@ -13,70 +13,13 @@ public class PropertiesManager {
 
     private String from;
 
-    @NestedConfigurationProperty()
     private RegistrationProperties registration = new RegistrationProperties();
-    @NestedConfigurationProperty()
+
     private VerificationProperties verification = new VerificationProperties();
 
-    public class RegistrationProperties {
-        private String subject;
-        private String plain;
-        private String html;
+    public class RegistrationProperties extends AbstractEmailProperties {}
 
-        public String getSubject() {
-            return subject;
-        }
-
-        public void setSubject(String subject) {
-            this.subject = subject;
-        }
-
-        public String getPlain() {
-            return plain;
-        }
-
-        public void setPlain(String plain) {
-            this.plain = plain;
-        }
-
-        public String getHtml() {
-            return html;
-        }
-
-        public void setHtml(String html) {
-            this.html = html;
-        }
-    }
-
-    public class VerificationProperties {
-        private String subject;
-        private String plain;
-        private String html;
-
-        public String getSubject() {
-            return subject;
-        }
-
-        public void setSubject(String subject) {
-            this.subject = subject;
-        }
-
-        public String getPlain() {
-            return plain;
-        }
-
-        public void setPlain(String plain) {
-            this.plain = plain;
-        }
-
-        public String getHtml() {
-            return html;
-        }
-
-        public void setHtml(String html) {
-            this.html = html;
-        }
-    }
+    public class VerificationProperties extends AbstractEmailProperties {}
 
     public String getFrom() {
         return from;
