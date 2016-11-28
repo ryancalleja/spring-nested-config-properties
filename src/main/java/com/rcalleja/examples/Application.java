@@ -13,14 +13,28 @@ import org.springframework.context.annotation.PropertySource;
 		"classpath:application.properties",
 		"classpath:external/project.properties"
 })
-public class SpringNestedConfigPropertiesApplication {
+public class Application {
 
 	@Autowired
 	private PropertiesManager propertiesManager;
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringNestedConfigPropertiesApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
+
+
+	/*
+	 - Uncomment this to use YML files configs. Comment out the @PropertySource annotation above.
+
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer yamlProperties() {
+		PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer =
+				new PropertySourcesPlaceholderConfigurer();
+		YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
+		yaml.setResources(new ClassPathResource("external/project.yml"));
+		propertySourcesPlaceholderConfigurer.setProperties(yaml.getObject());
+		return propertySourcesPlaceholderConfigurer;
+	}*/
 
 	@Bean
 	public boolean printProperties(){

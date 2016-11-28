@@ -1,0 +1,11 @@
+example :
+  email :
+    from : from@from.com
+    registration :
+        subject : Registration Success
+        plain : You have been registered
+        html : <p>You have been registered</p>
+    verification :
+        subject : You are verified
+        plain : You have been fully verified by our team.
+        html : <p>You have been fully verified by our team.</p>
